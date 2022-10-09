@@ -1,7 +1,15 @@
 for (let i = 0; i < 36; i++) {
     var gridBox = document.createElement("div");
     gridBox.className = "grid-box";
+    gridBox.id = "grid-box"+i;
     gridBox.style.width = "100px";
     gridBox.style.height = "100px";
-    document.getElementById("grid-container").appendChild(gridBox);    
+    gridBox.addEventListener("mouseover", changeColor);
+    document.getElementById("grid-container").appendChild(gridBox); 
+};
+
+
+function changeColor() {
+    var box = document.getElementById(this.id);
+    box.style.backgroundColor = "black";
 }
